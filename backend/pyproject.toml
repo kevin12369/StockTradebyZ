@@ -1,9 +1,9 @@
 [project]
 name = "stocktrade-backend"
 version = "1.0.0"
-description = "个人投研学习平台 - 股票选股系统后端"
+description = "个人投研学习平台 - 股票选股系统后端 (基于 SebastienZh/StockTradebyZ 优化版本)"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "kevin12369", email = "kevin12369@users.noreply.github.com"}
 ]
 requires-python = ">=3.11"
 dependencies = [

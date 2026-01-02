@@ -5,6 +5,10 @@
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## 🙏 项目来源
+
+本项目基于 [SebastienZh/StockTradebyZ](https://github.com/SebastienZh/StockTradebyZ) 进行优化，向原作者的开源精神致敬！
+
 ---
 
 ## [未发布]

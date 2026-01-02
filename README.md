@@ -7,6 +7,25 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-green.svg)](https://fastapi.tiangolo.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+## 🙏 致敬原项目
+
+本项目是基于 [SebastienZh/StockTradebyZ](https://github.com/SebastienZh/StockTradebyZ) 的优化版本，向原作者的开源精神致敬！
+
+### 🔄 Fork 来源
+- **原项目**：[SebastienZh/StockTradebyZ](https://github.com/SebastienZh/StockTradebyZ)
+- **原项目作者**：[@SebastienZh](https://github.com/SebastienZh)
+
+### 🚀 本项目优化内容
+在原项目基础上进行了以下重大优化：
+- ⚡ **性能提升**：数据同步速度提升9倍（5000只股票从90分钟→10分钟）
+- 📊 **功能增强**：新增实时市场看板、任务管理系统
+- 🛠️ **架构优化**：双模式同步、GitHub自动备份
+- 🎨 **体验改进**：完整的前后端分离、实时进度展示
+
+**感谢原作者 SebastienZh 提供的基础架构和选股策略实现！**
+
+---
+
 ## ✨ 核心特性
 
 ### ⚡ 高性能数据同步
@@ -464,11 +483,16 @@ MIT License - 详见 [LICENSE](LICENSE)
 
 ## 🙏 致谢
 
+### 特别感谢
+- **[SebastienZh/StockTradebyZ](https://github.com/SebastienZh/StockTradebyZ)** - 本项目基于原作者的开源项目进行优化，感谢提供的基础架构和选股策略实现
+- **[@Zettaranc](https://space.bilibili.com/)** - 选股策略的理论来源和无私分享
+
+### 技术栈致谢
 - [AKShare](https://akshare.akfamily.xyz/) - 开源财经数据接口库
 - [FastAPI](https://fastapi.tiangolo.com/) - 现代化的 Python Web 框架
 - [Vue.js](https://vuejs.org/) - 渐进式 JavaScript 框架
 - [Element Plus](https://element-plus.org/) - Vue 3 UI 组件库
-- [东方财富网](https://www.eastmoney.com/) - 数据来源
+- [东方财富网](https://www.eastmoney.com/) - 实时市场数据来源
 
 ## 📮 联系方式
 

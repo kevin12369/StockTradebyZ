@@ -1,6 +1,7 @@
 {
   "name": "stocktrade-frontend",
   "version": "1.0.0",
+  "description": "股票选股系统前端 - 基于 SebastienZh/StockTradebyZ 优化版本",
   "private": true,
   "type": "module",
   "scripts": {
