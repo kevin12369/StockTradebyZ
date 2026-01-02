@@ -1,0 +1,207 @@
+/**
+ * 股票选股系统 - 设计系统变量
+ * 基于 Ant Design 色彩体系 + A股涨跌习惯
+ */
+
+// ========== 主色调 ==========
+$primary-color: #1890ff;           // 主蓝色 - 用于主要操作、链接
+$primary-hover: #40a9ff;           // 主蓝色悬停
+$primary-active: #096dd9;          // 主蓝色激活
+$primary-light: #e6f7ff;           // 主蓝色浅色背景
+$primary-lighter: #bae7ff;         // 更浅的蓝色背景
+
+// ========== 涨跌颜色 (A股习惯) ==========
+$up-color: #f5222d;                // 上涨红色
+$up-bg: #fff1f0;                   // 上涨浅红背景
+$up-border: #ffa39e;               // 上涨浅红边框
+$up-strong: #c0392b;               // 强涨 (涨幅 > 7%)
+$up-moderate: #e74c3c;             // 中涨 (3% < 涨幅 ≤ 7%)
+
+$down-color: #52c41a;              // 下跌绿色
+$down-bg: #f6ffed;                 // 下跌浅绿背景
+$down-border: #b7eb8f;             // 下跌浅绿边框
+$down-strong: #27ae60;             // 强跌 (跌幅 < -7%)
+$down-moderate: #2ecc71;           // 中跌 (-7% ≤ 跌幅 < -3%)
+
+$flat-color: #8c8c8c;             // 平盘灰色
+
+// ========== 语义化颜色 ==========
+$success-color: #52c41a;           // 成功
+$success-bg: #f6ffed;              // 成功浅绿背景
+$success-light: #d9f7be;          // 成功更浅背景
+
+$warning-color: #faad14;           // 警告
+$warning-bg: #fff7e6;              // 警告浅橙背景
+$warning-light: #ffe7ba;           // 警告更浅背景
+
+$danger-color: #f5222d;            // 危险
+$danger-bg: #fff1f0;              // 危险浅红背景
+$danger-light: #ffccc7;            // 危险更浅背景
+
+$info-color: #1890ff;              // 信息
+$info-bg: #e6f7ff;                // 信息浅蓝背景
+$info-light: #bae7ff;              // 信息更浅背景
+
+// ========== 中性色体系 ==========
+$text-primary: #262626;            // 主要文本
+$text-secondary: #595959;          // 次要文本
+$text-tertiary: #8c8c8c;           // 辅助文本
+$text-quaternary: #bfbfbf;         // 占位符文本
+
+$border-base: #d9d9d9;             // 基础边框
+$border-light: #f0f0f0;            // 浅色边框
+$border-lighter: #f5f5f5;          // 更浅边框
+
+$bg-base: #f5f5f5;                 // 基础背景
+$bg-container: #ffffff;            // 容器背景
+$bg-elevated: #ffffff;             // 浮层背景
+
+// ========== 组件特定颜色 ==========
+$card-bg: #ffffff;                 // 卡片背景
+$table-header-bg: #fafafa;         // 表头背景
+$table-hover-bg: #f5f5f5;          // 表格悬停背景
+$stripe-bg: #fafafa;               // 斑马纹背景
+
+// ========== 深色主题 ==========
+$dark-bg-primary: #141414;         // 主背景
+$dark-bg-secondary: #1f1f1f;       // 次级背景
+$dark-bg-tertiary: #262626;        // 三级背景
+$dark-text-primary: #e8e8e8;       // 主要文本
+$dark-text-secondary: #bfbfbf;     // 次要文本
+$dark-border: #434343;             // 边框
+
+// ========== 字体家族 ==========
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+$font-family-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
+                   'Courier New', monospace;
+
+// ========== 字号系统 ==========
+$font-size-xs: 11px;               // 极小文本 - 辅助说明
+$font-size-sm: 12px;               // 小文本 - 表格内容
+$font-size-base: 13px;             // 基础文本 - 正文
+$font-size-md: 14px;               // 中等文本 - 标题、按钮
+$font-size-lg: 16px;               // 大文本 - 卡片标题
+$font-size-xl: 18px;               // 超大文本 - 页面标题
+$font-size-xxl: 24px;              // 巨大文本 - 大标题
+
+// ========== 字重系统 ==========
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ========== 行高系统 ==========
+$line-height-tight: 1.25;          // 紧凑 - 标题
+$line-height-base: 1.5;            // 基础 - 正文
+$line-height-loose: 1.75;          // 宽松 - 长文本
+
+// ========== 间距系统 (基于4px网格) ==========
+$spacing-0: 0;
+$spacing-1: 4px;                   // 极小间距
+$spacing-2: 8px;                   // 小间距
+$spacing-3: 12px;                  // 中小间距
+$spacing-4: 16px;                  // 中等间距
+$spacing-5: 20px;                  // 中大间距
+$spacing-6: 24px;                  // 大间距
+$spacing-7: 28px;
+$spacing-8: 32px;                  // 超大间距
+$spacing-10: 40px;
+$spacing-12: 48px;
+$spacing-16: 64px;
+
+// 组件内边距
+$padding-xs: $spacing-1;           // 4px
+$padding-sm: $spacing-2;           // 8px
+$padding-md: $spacing-3;           // 12px
+$padding-lg: $spacing-4;           // 16px
+$padding-xl: $spacing-6;           // 24px
+
+// 组件外边距
+$margin-xs: $spacing-1;            // 4px
+$margin-sm: $spacing-2;            // 8px
+$margin-md: $spacing-4;            // 16px
+$margin-lg: $spacing-6;            // 24px
+$margin-xl: $spacing-8;            // 32px
+
+// ========== 圆角系统 ==========
+$border-radius-none: 0;
+$border-radius-sm: 2px;            // 小圆角 - 标签、徽章
+$border-radius-base: 4px;          // 基础圆角 - 按钮、输入框
+$border-radius-md: 6px;            // 中圆角 - 卡片
+$border-radius-lg: 8px;            // 大圆角 - 弹窗
+$border-radius-xl: 12px;           // 超大圆角 - 特殊容器
+$border-radius-full: 9999px;       // 完整圆角 - 胶囊按钮
+
+// ========== 阴影系统 ==========
+$shadow-1: 0 1px 2px rgba(0, 0, 0, 0.03),
+           0 1px 6px -1px rgba(0, 0, 0, 0.02);
+$shadow-2: 0 2px 4px rgba(0, 0, 0, 0.04),
+           0 2px 8px -2px rgba(0, 0, 0, 0.04);
+$shadow-3: 0 4px 6px rgba(0, 0, 0, 0.05),
+           0 2px 10px -2px rgba(0, 0, 0, 0.04);
+$shadow-4: 0 6px 12px rgba(0, 0, 0, 0.06),
+           0 4px 16px -4px rgba(0, 0, 0, 0.06);
+$shadow-5: 0 10px 20px rgba(0, 0, 0, 0.08),
+           0 6px 24px -6px rgba(0, 0, 0, 0.08);
+
+// 组件专用阴影
+$card-shadow: $shadow-2;
+$card-hover-shadow: $shadow-4;
+$modal-shadow: $shadow-5;
+$dropdown-shadow: $shadow-3;
+
+// 涨跌特殊阴影
+$up-shadow: 0 2px 8px rgba(245, 34, 45, 0.15);
+$down-shadow: 0 2px 8px rgba(82, 196, 26, 0.15);
+
+// ========== 过渡动画 ==========
+$transition-fast: 0.15s;
+$transition-base: 0.2s;
+$transition-slow: 0.25s;
+$transition-slower: 0.3s;
+
+$easing-linear: linear;
+$easing-ease: ease;
+$easing-ease-in: ease-in;
+$easing-ease-out: ease-out;
+$easing-ease-in-out: ease-in-out;
+$easing-cubic: cubic-bezier(0.4, 0, 0.2, 1);
+
+// ========== 响应式断点 ==========
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+$breakpoint-wide: 1600px;
+
+// ========== 最大宽度 ==========
+$container-max-width: 1600px;
+$container-narrow-width: 1200px;
+$container-small-width: 900px;
+
+// ========== Z-index 层级 ==========
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// ========== ECharts 图表颜色 ==========
+$echarts-color-up: #f5222d;
+$echarts-color-down: #52c41a;
+$echarts-color-ma5: #ff6b6b;
+$echarts-color-ma10: #4ecdc4;
+$echarts-color-ma20: #ffe66d;
+$echarts-color-ma60: #1a535c;
+$echarts-color-bbi: #9b59b6;
+$echarts-color-kdj-k: #ff6b6b;
+$echarts-color-kdj-d: #4ecdc4;
+$echarts-color-kdj-j: #ffe66d;
+$echarts-color-rsi6: #9b59b6;
+$echarts-color-rsi12: #3498db;

@@ -1,0 +1,479 @@
+/**
+ * Element Plus 主题定制
+ * 覆盖 Element Plus 默认样式变量
+ */
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // 颜色系统
+  $colors: (
+    'primary': (
+      'base': #1890ff,
+    ),
+    'success': (
+      'base': #52c41a,
+    ),
+    'warning': (
+      'base': #faad14,
+    ),
+    'danger': (
+      'base': #f5222d,
+    ),
+    'info': (
+      'base': #1890ff,
+    ),
+  ),
+
+  // 字体
+  $font-family: (
+    'base': -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+  ),
+  $font-size: (
+    'base': 13px,
+    'small': 12px,
+    'extra-small': 11px,
+    'medium': 14px,
+    'large': 16px,
+    'extra-large': 18px,
+  ),
+
+  // 边框圆角
+  $border-radius: (
+    'base': 4px,
+    'small': 2px,
+    'large': 8px,
+    'round': 9999px,
+  ),
+
+  // 阴影
+  $box-shadow: (
+    'base': 0 2px 4px rgba(0, 0, 0, 0.04),
+    'light': 0 2px 8px rgba(0, 0, 0, 0.04),
+    'lighter': 0 1px 2px rgba(0, 0, 0, 0.03),
+    'dark': 0 4px 12px rgba(0, 0, 0, 0.08),
+  ),
+
+  // 间距
+  $spacing: (
+    'base': 16px,
+  ),
+);
+
+// ========== Table 组件定制 ==========
+.el-table {
+  --el-table-border-color: #f0f0f0;
+  --el-table-bg-color: #ffffff;
+  --el-table-header-bg-color: #fafafa;
+  --el-table-row-hover-bg-color: #f5f5f5;
+  --el-table-text-color: #262626;
+  --el-table-header-text-color: #262626;
+  --el-table-current-row-bg-color: #e6f7ff;
+  --el-table-fixed-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  font-size: 13px;
+
+  // 表头
+  th.el-table__cell {
+    background-color: var(--el-table-header-bg-color);
+    color: var(--el-table-header-text-color);
+    font-weight: 600;
+    border-bottom: 1px solid var(--el-table-border-color);
+    padding: 12px 0;
+  }
+
+  // 表体单元格
+  td.el-table__cell {
+    padding: 10px 0;
+  }
+
+  // 斑马纹
+  &.el-table--striped .el-table__row--striped {
+    background-color: #fafafa;
+  }
+
+  // 固定列阴影
+  .el-table__fixed-right-patch {
+    background-color: var(--el-table-header-bg-color);
+  }
+}
+
+// ========== Card 组件定制 ==========
+.el-card {
+  --el-card-border-color: #f0f0f0;
+  --el-card-border-radius: 6px;
+  --el-card-padding: 16px;
+
+  border: 1px solid var(--el-card-border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .el-card__header {
+    padding: 14px var(--el-card-padding);
+    border-bottom: 1px solid var(--el-card-border-color);
+    font-weight: 600;
+    background-color: #fafafa;
+  }
+
+  .el-card__body {
+    padding: var(--el-card-padding);
+  }
+}
+
+// ========== Button 组件定制 ==========
+.el-button {
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  // 主要按钮
+  &.el-button--primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+
+    &:hover {
+      background-color: #40a9ff;
+      border-color: #40a9ff;
+    }
+
+    &:active {
+      background-color: #096dd9;
+      border-color: #096dd9;
+    }
+  }
+
+  // 成功按钮
+  &.el-button--success {
+    background-color: #52c41a;
+    border-color: #52c41a;
+
+    &:hover {
+      background-color: #73d13d;
+      border-color: #73d13d;
+    }
+  }
+
+  // 危险按钮
+  &.el-button--danger {
+    background-color: #f5222d;
+    border-color: #f5222d;
+
+    &:hover {
+      background-color: #ff4d4f;
+      border-color: #ff4d4f;
+    }
+  }
+
+  // 文字按钮
+  &.el-button--text {
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+// ========== Menu 组件定制 ==========
+.el-menu--horizontal {
+  border-bottom: 1px solid #f0f0f0;
+
+  .el-menu-item,
+  .el-sub-menu__title {
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .el-menu-item:hover,
+  .el-sub-menu__title:hover {
+    background-color: #f5f5f5;
+  }
+
+  .el-menu-item.is-active {
+    border-bottom-color: #1890ff;
+    color: #1890ff;
+  }
+}
+
+// ========== Tag 组件定制 ==========
+.el-tag {
+  border-radius: 2px;
+  font-weight: 500;
+  padding: 2px 8px;
+  font-size: 11px;
+
+  // 成功标签（用于下跌）
+  &.el-tag--success {
+    background-color: #f6ffed;
+    border-color: #b7eb8f;
+    color: #52c41a;
+  }
+
+  // 危险标签（用于上涨）
+  &.el-tag--danger {
+    background-color: #fff1f0;
+    border-color: #ffa39e;
+    color: #f5222d;
+  }
+
+  // 警告标签
+  &.el-tag--warning {
+    background-color: #fff7e6;
+    border-color: #ffd591;
+    color: #faad14;
+  }
+
+  // 信息标签
+  &.el-tag--info {
+    background-color: #e6f7ff;
+    border-color: #91d5ff;
+    color: #1890ff;
+  }
+}
+
+// ========== Dialog 组件定制 ==========
+.el-dialog {
+  border-radius: 8px;
+
+  .el-dialog__header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-right: 0;
+  }
+
+  .el-dialog__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #262626;
+  }
+
+  .el-dialog__body {
+    padding: 24px;
+  }
+
+  .el-dialog__footer {
+    padding: 16px 24px;
+    border-top: 1px solid #f0f0f0;
+  }
+}
+
+// ========== Input 组件定制 ==========
+.el-input__wrapper {
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 0 1px var(--el-color-primary) inset;
+  }
+
+  &.is-focus {
+    box-shadow: 0 0 0 1px var(--el-color-primary) inset;
+  }
+}
+
+.el-input-number {
+  .el-input-number__increase,
+  .el-input-number__decrease {
+    background-color: #fafafa;
+    &:hover {
+      color: var(--el-color-primary);
+    }
+  }
+}
+
+// ========== Select 组件定制 ==========
+.el-select {
+  .el-select__wrapper {
+    border-radius: 4px;
+  }
+
+  .el-select__popper {
+    .el-select-dropdown__item {
+      font-size: 13px;
+      padding: 8px 12px;
+
+      &.is-selected {
+        background-color: #e6f7ff;
+        color: #1890ff;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// ========== DatePicker 组件定制 ==========
+.el-picker__popper {
+  .el-date-table td.in-range div,
+  .el-date-table td.start-date div,
+  .el-date-table td.end-date div {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+
+  .el-date-table td.today span {
+    color: #1890ff;
+    font-weight: 600;
+  }
+
+  .el-date-table td.available:hover {
+    color: #1890ff;
+  }
+
+  .el-picker-panel__content .cell:hover {
+    color: #1890ff;
+  }
+
+  .el-button.is-plain {
+    &:hover {
+      background-color: #e6f7ff;
+      color: #1890ff;
+      border-color: #91d5ff;
+    }
+  }
+}
+
+// ========== Pagination 组件定制 ==========
+.el-pagination {
+  button,
+  li {
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .el-pager li.is-active {
+    background-color: #1890ff;
+    border-color: #1890ff;
+  }
+
+  .el-pager li:hover {
+    color: #1890ff;
+  }
+}
+
+// ========== Progress 组件定制 ==========
+.el-progress {
+  .el-progress__text {
+    font-weight: 600;
+  }
+
+  &.el-progress--success {
+    .el-progress-bar__inner {
+      background-color: #52c41a;
+    }
+  }
+}
+
+// ========== Alert 组件定制 ==========
+.el-alert {
+  border-radius: 4px;
+  border-left: 4px solid;
+
+  &.el-alert--success {
+    background-color: #f6ffed;
+    border-color: #b7eb8f;
+
+    .el-alert__title {
+      color: #389e0d;
+    }
+  }
+
+  &.el-alert--warning {
+    background-color: #fff7e6;
+    border-color: #ffd591;
+
+    .el-alert__title {
+      color: #d46b08;
+    }
+  }
+
+  &.el-alert--info {
+    background-color: #e6f7ff;
+    border-color: #91d5ff;
+
+    .el-alert__title {
+      color: #096dd9;
+    }
+  }
+
+  &.el-alert--error {
+    background-color: #fff1f0;
+    border-color: #ffa39e;
+
+    .el-alert__title {
+      color: #cf1322;
+    }
+  }
+}
+
+// ========== Tooltip 组件定制 ==========
+.el-tooltip__popper {
+  .el-tooltip__popper.is-dark {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  .el-tooltip__popper.is-light {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    color: #262626;
+  }
+}
+
+// ========== Popover 组件定制 ==========
+.el-popover {
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+}
+
+// ========== Tabs 组件定制 ==========
+.el-tabs {
+  .el-tabs__item {
+    font-size: 14px;
+    font-weight: 500;
+    color: #595959;
+
+    &:hover {
+      color: #1890ff;
+    }
+
+    &.is-active {
+      color: #1890ff;
+    }
+  }
+
+  .el-tabs__active-bar {
+    background-color: #1890ff;
+  }
+}
+
+// ========== Form 组件定制 ==========
+.el-form {
+  .el-form-item__label {
+    font-weight: 500;
+    color: #595959;
+  }
+
+  .el-form-item__error {
+    font-size: 11px;
+  }
+}
+
+// ========== Switch 组件定制 ==========
+.el-switch {
+  &.is-checked .el-switch__core {
+    background-color: #52c41a;
+    border-color: #52c41a;
+  }
+}

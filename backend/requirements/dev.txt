@@ -1,0 +1,18 @@
+# StockTrade Backend - Development Dependencies
+# 开发依赖
+
+-r base.txt
+
+# 测试
+pytest==8.3.0
+pytest-asyncio==0.24.0
+httpx==0.28.0
+
+# 代码质量
+black==24.10.0
+isort==5.13.0
+pylint==3.3.0
+
+# 类型检查
+mypy==1.13.0
+types-python-dateutil==2.9.0.20241003

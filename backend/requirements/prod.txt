@@ -1,0 +1,7 @@
+# StockTrade Backend - Production Dependencies
+# 生产环境依赖
+
+-r base.txt
+
+# 生产环境专用
+gunicorn==23.0.0

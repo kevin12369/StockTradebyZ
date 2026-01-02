@@ -1,0 +1,268 @@
+/**
+ * Sass Mixins - 常用样式混入 */
+@use './variables.scss' as *;
+
+// ========== 响应式断点 ==========
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (min-width: 480px) { @content; }
+  } @else if $breakpoint == 'sm' {
+    @media (min-width: 576px) { @content; }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: 992px) { @content; }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: 1200px) { @content; }
+  } @else if $breakpoint == 'xxl' {
+    @media (min-width: 1400px) { @content; }
+  } @else if $breakpoint == 'wide' {
+    @media (min-width: 1600px) { @content; }
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (max-width: 479px) { @content; }
+  } @else if $breakpoint == 'sm' {
+    @media (max-width: 575px) { @content; }
+  } @else if $breakpoint == 'md' {
+    @media (max-width: 767px) { @content; }
+  } @else if $breakpoint == 'lg' {
+    @media (max-width: 991px) { @content; }
+  } @else if $breakpoint == 'xl' {
+    @media (max-width: 1199px) { @content; }
+  } @else if $breakpoint == 'xxl' {
+    @media (max-width: 1399px) { @content; }
+  }
+}
+
+// ========== 文本省略 ==========
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-ellipsis-multiline($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ========== 清除浮动 ==========
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// ========== Flexbox 布局 ==========
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// ========== 涨跌样式 ==========
+@mixin up-style {
+  color: $up-color;
+  background-color: $up-bg;
+  border: 1px solid $up-border;
+}
+
+@mixin down-style {
+  color: $down-color;
+  background-color: $down-bg;
+  border: 1px solid $down-border;
+}
+
+@mixin up-down-text {
+  &.up {
+    color: $up-color;
+  }
+  &.down {
+    color: $down-color;
+  }
+  &.flat {
+    color: $flat-color;
+  }
+}
+
+// ========== 卡片样式 ==========
+@mixin card-base {
+  background: $card-bg;
+  border-radius: $border-radius-md;
+  padding: $padding-lg;
+  box-shadow: $card-shadow;
+  transition: all $transition-base $easing-cubic;
+}
+
+@mixin card-hover {
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $card-hover-shadow;
+  }
+}
+
+// ========== 按钮重置 ==========
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+// ========== 滚动条样式 ==========
+@mixin custom-scrollbar($width: 6px, $thumb-color: #c1c1c1, $track-color: #f1f1f1) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: $width / 2;
+    &:hover {
+      background: darken($thumb-color, 10%);
+    }
+  }
+}
+
+// ========== 动画关键帧 ==========
+@mixin animation($name, $duration: $transition-base, $easing: $easing-ease, $delay: 0) {
+  animation: $name $duration $easing $delay;
+}
+
+// ========== 绝对定位居中 ==========
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// ========== 覆盖层 ==========
+@mixin overlay($z-index: $z-index-modal-backdrop, $background: rgba(0, 0, 0, 0.5)) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background;
+  z-index: $z-index;
+}
+
+// ========== 加载动画 ==========
+@mixin spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin loading-spinner($size: 40px, $color: $primary-color, $width: 3px) {
+  width: $size;
+  height: $size;
+  border: $width solid rgba($color, 0.2);
+  border-top-color: $color;
+  border-radius: 50%;
+  animation: spin $transition-slower linear infinite;
+}
+
+// ========== 骨架屏动画 ==========
+@mixin skeleton-loading {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e8e8e8 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+
+  @keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+// ========== 玻璃态效果 ==========
+@mixin glass-effect($background: rgba(255, 255, 255, 0.8), $blur: 10px) {
+  background: $background;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+// ========== 渐变背景 ==========
+@mixin gradient-bg($start-color, $end-color, $direction: to right) {
+  background: linear-gradient($direction, $start-color, $end-color);
+}
+
+// ========== 文本选择样式 ==========
+@mixin text-selection($background: $primary-color, $color: #fff) {
+  ::selection {
+    background: $background;
+    color: $color;
+  }
+  ::-moz-selection {
+    background: $background;
+    color: $color;
+  }
+}
+
+// ========== 焦点样式 ==========
+@mixin focus-visible($offset: 2px) {
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: $offset;
+  }
+}
+
+// ========== 表格单元格基础样式 ==========
+@mixin table-cell {
+  padding: $padding-sm $padding-md;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  border-bottom: 1px solid $border-light;
+}
+
+// ========== 徽章/标签样式 ==========
+@mixin badge($color: $primary-color) {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  background-color: rgba($color, 0.1);
+  color: $color;
+  border: 1px solid rgba($color, 0.2);
+}
